@@ -1,0 +1,242 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Invite from "../components/Invite.astro";
+import { pageTitle } from "../consts";
+
+const description =
+	"How Akai Milson teaches AP Seminar: the QUEST framework, Individual Research Report, Team Multimedia Presentation, Individual Written Argument, IMP, and the research skills students practice.";
+
+const steps = [
+	{
+		name: "Question and Explore",
+		text: "Students start with a genuine problem and learn to narrow it. A usable question is researchable, debatable, and significant to someone beyond the author. We practice scope the way a photographer practices framing: too wide and there is no subject, too tight and there is no argument.",
+	},
+	{
+		name: "Understand and Analyze",
+		text: "Reading a source means naming its argument, not collecting quotations. Students identify the claim, the line of reasoning, the evidence, and the assumptions. They also notice what the source is built to do: report, persuade, sell, advocate, or study.",
+	},
+	{
+		name: "Evaluate Multiple Perspectives",
+		text: "A perspective is more than a for-or-against vote. Students map stakeholders and scholars, then ask what each one values, what evidence they trust, and where their view runs out. Disagreement is treated as information.",
+	},
+	{
+		name: "Synthesize Ideas",
+		text: "Synthesis is the original thinking. Students put sources in conversation and build a line of reasoning that none of the sources made alone. Commentary is where this happens. A paragraph that only reports what others said has not synthesized yet.",
+	},
+	{
+		name: "Team, Transform, and Transmit",
+		text: "The argument has to reach an audience. Teams divide inquiry without dividing understanding. Individuals choose a medium, a structure, and a voice that a listener or reader can follow. Transmission includes the defense: can you answer a question you did not script?",
+	},
+];
+
+const skills = [
+	{
+		title: "Question design",
+		text: "Moving from a topic to a question with a clear scope, definitions, and a reason to care.",
+	},
+	{
+		title: "Lens discipline",
+		text: "Choosing a perspective and staying with it long enough to say something precise.",
+	},
+	{
+		title: "Source judgment",
+		text: "Deciding what a source can prove, and what a second source does to that confidence.",
+	},
+	{
+		title: "Line of reasoning",
+		text: "Ordering claims so each one prepares the next, with evidence and commentary at every step.",
+	},
+	{
+		title: "Collaboration",
+		text: "Building a team argument that is shared, while each person’s research remains accountable.",
+	},
+	{
+		title: "Oral defense",
+		text: "Explaining a choice of evidence, a limitation, or a complication without retreating to the script.",
+	},
+];
+---
+
+<BaseLayout title={pageTitle("AP Seminar")} description={description}>
+	<PageHero
+		eyebrow="AP Seminar"
+		title="Inquiry, argument, and the courage to revise"
+		lede="AP Seminar is where students learn to investigate a real question, read across perspectives, and communicate an argument in writing and aloud. It is the first course in the AP Capstone sequence, and it is taught here as a practice, not a packet of directions."
+	/>
+
+	<section class="section">
+		<div class="wrap measure prose">
+			<h2>What students are actually learning</h2>
+			<p>
+				College Board publishes the official performance tasks, exam, and scoring guidelines. Those
+				documents govern the course. What follows is the classroom map I use so students can meet
+				that bar with their own thinking intact.
+			</p>
+			<p>
+				Students investigate issues that do not have a single clean answer. They work in teams and
+				on their own. They write for a reader who expects evidence, and they speak to an audience
+				that is allowed to ask hard questions. By the end of the year, the habits are portable:
+				the same student can walk into a first-year college seminar and know how to begin.
+			</p>
+			<p>
+				Under College Board’s published framework, the score draws on a team project and
+				presentation, an individual research-based essay and presentation, and an end-of-course
+				exam. Weighting and task rules can be updated. Families and students should treat the
+				current course materials as the final word on percentages, word counts, and timing. I
+				teach the thinking those tasks require, and I check the year’s directions with students
+				before anything is submitted.
+			</p>
+		</div>
+	</section>
+
+	<section class="section band-warm" id="quest" aria-labelledby="quest-heading">
+		<div class="wrap">
+			<div class="section-head">
+				<h2 id="quest-heading">The QUEST framework</h2>
+				<p class="lede">
+					QUEST is the course’s cycle of moves. Posted on a wall, it is a slogan. Used weekly, it
+					is a method. Students name which move they are in, and we notice when they try to
+					transmit an argument they have not synthesized.
+				</p>
+			</div>
+			<ol class="step-list">
+				{
+					steps.map((step, index) => (
+						<li class="step">
+							<span class="step-num">{index + 1}</span>
+							<div>
+								<h3>{step.name}</h3>
+								<p>{step.text}</p>
+							</div>
+						</li>
+					))
+				}
+			</ol>
+			<p class="lede" style="margin-top:1.25rem">
+				The <a href="/resources/quest-planning-map/">QUEST planning map</a> is the scaffold students
+				use early in the year.
+			</p>
+		</div>
+	</section>
+
+	<section class="section" id="performance-tasks" aria-labelledby="tasks-heading">
+		<div class="wrap">
+			<div class="section-head">
+				<h2 id="tasks-heading">Performance tasks</h2>
+				<p class="lede">
+					Two major tasks structure the year. Each one pairs a written argument with a
+					presentation the student has to stand behind.
+				</p>
+			</div>
+			<div class="split-even">
+				<article class="panel">
+					<p class="kicker">Performance Task 1</p>
+					<h3>Individual Research Report &amp; Team Multimedia Presentation</h3>
+					<p>
+						A team chooses a real-world problem and divides the inquiry by lens or approach. Each
+						student writes an Individual Research Report, a compact, sourced report on their
+						corner of the issue. Course materials have described that report at about 1,200 words.
+						The team then builds a Team Multimedia Presentation, typically in the range of 8 to 10
+						minutes, and answers defense questions.
+					</p>
+					<p>
+						The classroom challenge is genuine collaboration. The team needs a shared problem and
+						distinct contributions. Nobody should be hearing their own research for the first time
+						during the presentation. We rehearse the connections: how one report changes what
+						another report is allowed to claim.
+					</p>
+					<ul>
+						<li>Individual reports that a teammate can actually use.</li>
+						<li>A team argument with a through-line, not five speeches taped together.</li>
+						<li>Defense practice on limitations, evidence, and perspective.</li>
+					</ul>
+				</article>
+				<article class="panel">
+					<p class="kicker">Performance Task 2</p>
+					<h3>Individual Written Argument &amp; Individual Multimedia Presentation</h3>
+					<p>
+						Students move from the team to a fully individual argument. The Individual Written
+						Argument draws on stimulus materials plus sources the student selects. Course materials
+						have described it at about 2,000 words. Students then present an Individual Multimedia
+						Presentation, often in the range of 6 to 8 minutes, and complete an oral defense.
+					</p>
+					<p>
+						This is where scaffolds come off. The question, the conversation among sources, and the
+						line of reasoning have to be the student’s. Stimulus packets are read with the
+						<a href="/resources/stimulus-synthesis-organizer/">synthesis organizer</a> until that
+						routine is internal. The
+						<a href="/resources/line-of-reasoning-checklist/">line of reasoning checklist</a> is a
+						revision tool, not a substitute for College Board’s rubric.
+					</p>
+					<ul>
+						<li>A debatable claim that the stimulus materials complicate.</li>
+						<li>Commentary that connects evidence back to the reason, every time.</li>
+						<li>A presentation that a listener can follow without the paper in hand.</li>
+					</ul>
+				</article>
+			</div>
+			<article class="panel" style="margin-top:1rem">
+				<p class="kicker">End-of-course exam</p>
+				<h3>Reading an argument, then building one</h3>
+				<p>
+					The exam asks students to do, under time, what the year has practiced slowly. One part
+					asks for short analytic responses to an argument. Another asks students to synthesize
+					stimulus sources into an evidence-based argument of their own. We prepare by reading
+					arguments for structure, not by memorizing a template that collapses when the sources
+					change.
+				</p>
+			</article>
+		</div>
+	</section>
+
+	<section class="section band-warm" id="college-skills" aria-labelledby="skills-heading">
+		<div class="wrap">
+			<div class="section-head">
+				<h2 id="skills-heading">College-level research, practiced in high school</h2>
+				<p class="lede">
+					“College-level” here means the habits a first-year seminar expects: a question with
+					boundaries, sources read in context, and an argument the writer can explain out loud.
+				</p>
+			</div>
+			<div class="skill-grid">
+				{
+					skills.map((skill) => (
+						<article class="panel">
+							<h3>{skill.title}</h3>
+							<p>{skill.text}</p>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="wrap measure prose">
+			<h2>How the scaffolding fades</h2>
+			<p>
+				Early tasks use visible supports: the QUEST map, the stimulus organizer, sentence stems for
+				commentary, and a team planning guide. Students are told, in advance, which supports will
+				disappear. By the individual written argument, the question and the outline are theirs. I
+				will still confer. I will not supply the claim.
+			</p>
+			<p>
+				Academic integrity is part of that fade. Students learn to cite, to paraphrase without
+				laundering someone else’s structure, and to disclose any allowed use of digital tools. The
+				standard is simple to say and strict to keep: the thinking in the paper has to be work the
+				student can defend in the room.
+			</p>
+			<p>
+				Families who want the practical tools can start with the
+				<a href="/resources#ap-seminar">AP Seminar resource set</a>. Colleagues who want the
+				workshop version can <a href="/contact?interest=academic-writing">request a session</a>.
+			</p>
+		</div>
+	</section>
+
+	<Invite
+		title="Planning AP Seminar, or supporting a student in it?"
+		text="I welcome questions from families, from teachers new to the course, and from schools designing the Capstone sequence."
+	/>
+</BaseLayout>

@@ -1,50 +1,272 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Portrait from "../components/Portrait.astro";
+import Invite from "../components/Invite.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import { SITE_DESCRIPTION, pageTitle } from "../consts";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const curriculum = [
+	{
+		title: "Inquiry Frameworks",
+		text: "Question design, lens selection, and a QUEST cycle students can actually walk, from the first curiosity to a claim they can defend.",
+		href: "/ap-seminar#quest",
+		more: "See the QUEST cycle",
+	},
+	{
+		title: "Stimulus Packet Synthesis",
+		text: "A routine for reading a packet as a conversation: what each source claims, where the perspectives clash, and what the tension makes possible.",
+		href: "/resources/stimulus-synthesis-organizer/",
+		more: "Open the organizer",
+	},
+	{
+		title: "QUEST Model Scaffolding",
+		text: "Planning maps that make each move visible early in the year, then fade once students can carry the thinking without the boxes.",
+		href: "/resources/quest-planning-map/",
+		more: "Open the planning map",
+	},
+	{
+		title: "Performance Task Rubrics",
+		text: "Companion checklists for the IRR, TMP, IWA, and IMP. They sit beside College Board’s official criteria and translate them into revision moves.",
+		href: "/ap-seminar#performance-tasks",
+		more: "Review the tasks",
+	},
+];
+
+const classroom = [
+	{
+		title: "Graphic Organizers",
+		text: "Paragraph builders and literary analysis frames for 11th Grade English and AP Seminar, designed to teach the move and then get out of the way.",
+		href: "/resources#english",
+		more: "Browse writing tools",
+	},
+	{
+		title: "Source Credibility & Web Literacy",
+		text: "Guides for naming a creator, reading laterally, and deciding what a source is allowed to prove in an argument.",
+		href: "/resources#web-literacy",
+		more: "Open the guides",
+	},
+	{
+		title: "Peer Review Protocols",
+		text: "A timed, specific protocol so feedback names the line of reasoning, the evidence, and one revision the writer can make today.",
+		href: "/resources/peer-review-protocol/",
+		more: "Open the protocol",
+	},
+];
+
+const presentations = [
+	{
+		title: "Students as Fact-Checkers",
+		text: "A workshop on making lateral reading and source evaluation a classroom habit, including live claims students are already seeing.",
+		href: "/contact?interest=fact-checking",
+		more: "Request this workshop",
+	},
+	{
+		title: "AI-Assisted Research Without Losing the Thinker",
+		text: "Protocols that let students use emerging tools for search and feedback while the question, the judgment, and the line of reasoning stay theirs.",
+		href: "/contact?interest=ai-research",
+		more: "Request this workshop",
+	},
+	{
+		title: "Scaffolding Academic Writing",
+		text: "A session on organizers, models, and peer review that build academic writing without sanding off a student’s voice.",
+		href: "/contact?interest=academic-writing",
+		more: "Request this workshop",
+	},
+];
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout title={pageTitle("Akai Milson")} description={SITE_DESCRIPTION}>
+	<section class="home-hero">
+		<div class="wrap hero-grid">
+			<div class="hero-copy">
+				<p class="eyebrow">Olympia High School · English &amp; AP Seminar</p>
+				<h1>Helping Students Become Better Thinkers</h1>
+				<p class="lede">A modern educator. AP Seminar teacher. Curriculum designer. Technology enthusiast.</p>
+				<div class="cta-row">
+					<a class="btn btn-primary" href="#recent-work">Explore My Work</a>
+					<a class="btn btn-secondary" href="/resources">Teaching Resources</a>
+				</div>
+				<ul class="hero-facts">
+					<li>11th Grade English</li>
+					<li>AP Seminar</li>
+					<li>Curriculum design</li>
+				</ul>
+			</div>
+			<Portrait />
+		</div>
+	</section>
+
+	<section class="section band-warm" aria-labelledby="pillars-heading">
+		<div class="wrap">
+			<div class="section-head">
+				<p class="eyebrow">Four pillars</p>
+				<h2 id="pillars-heading">The work, in four directions</h2>
+			</div>
+			<div class="pillar-grid">
+				<a class="pillar" href="/ap-seminar">
+					<span class="icon-bubble" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round">
+							<circle cx="12" cy="12" r="9"></circle>
+							<path d="m14.9 9.1-1.7 3.7-3.7 1.7 1.7-3.7 3.7-1.7z"></path>
+						</svg>
+					</span>
+					<h3>AP Seminar</h3>
+					<p>Developing inquiry, research, and argumentation.</p>
+					<span class="more">Explore AP Seminar</span>
+				</a>
+				<a class="pillar" href="/teaching">
+					<span class="icon-bubble" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M12 7.2c.3-1.6 1.2-2.7 2.6-3.2"></path>
+							<path d="M8.2 7.4C6.6 8.4 5.2 10.4 5.2 13.1 5.2 16.4 7.2 19 9.6 19.4c.9.2 1.5-.5 2.4-.5s1.5.7 2.4.5c2.4-.4 4.4-3 4.4-6.3 0-2.7-1.4-4.7-3-5.7-1.3-1.6-3.6-1.8-5.6.0z"></path>
+						</svg>
+					</span>
+					<h3>Teaching Philosophy</h3>
+					<p>Creating classrooms where curiosity drives learning.</p>
+					<span class="more">Read the philosophy</span>
+				</a>
+				<a class="pillar" href="/resources#ai-tech">
+					<span class="icon-bubble" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round">
+							<rect x="3.5" y="3.5" width="7" height="7" rx="1.5"></rect>
+							<rect x="13.5" y="13.5" width="7" height="7" rx="1.5"></rect>
+							<path d="M10.5 7h3a2 2 0 0 1 2 2v4.5"></path>
+						</svg>
+					</span>
+					<h3>AI &amp; Technology</h3>
+					<p>Using emerging technology to enhance—not replace—learning.</p>
+					<span class="more">See classroom technology tools</span>
+				</a>
+				<a class="pillar" href="/teaching#research-writing">
+					<span class="icon-bubble" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round">
+							<path d="M4 20h4L18.5 9.5 14.5 5.5 4 16v4z"></path>
+							<path d="m13.8 6.2 4 4"></path>
+						</svg>
+					</span>
+					<h3>Research &amp; Writing</h3>
+					<p>Helping students become confident communicators.</p>
+					<span class="more">See how writing is taught</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" id="recent-work" aria-labelledby="recent-heading">
+		<div class="wrap">
+			<div class="section-head">
+				<p class="eyebrow">Recent work</p>
+				<h2 id="recent-heading">Curriculum, tools, writing, and workshops</h2>
+				<p class="lede">
+					Four strands of the same practice. Filter the list, or read straight through.
+				</p>
+			</div>
+			<div class="filters" role="toolbar" aria-label="Filter recent work">
+				<button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+				<button class="filter-btn" type="button" data-filter="curriculum" aria-pressed="false">AP Seminar Curriculum</button>
+				<button class="filter-btn" type="button" data-filter="classroom" aria-pressed="false">Classroom Resources</button>
+				<button class="filter-btn" type="button" data-filter="articles" aria-pressed="false">Blog Articles</button>
+				<button class="filter-btn" type="button" data-filter="presentations" aria-pressed="false">Presentations</button>
+			</div>
+			<p class="filter-status" id="filter-status" aria-live="polite">Showing all recent work.</p>
+			<div class="work-grid">
+				{
+					curriculum.map((item) => (
+						<article class="work-card" data-kind="curriculum">
+							<p class="kicker">AP Seminar Curriculum</p>
+							<h3>
+								<a href={item.href}>{item.title}</a>
+							</h3>
+							<p>{item.text}</p>
+							<span class="more">{item.more}</span>
+						</article>
+					))
+				}
+				{
+					classroom.map((item) => (
+						<article class="work-card" data-kind="classroom">
+							<p class="kicker">Classroom Resources</p>
+							<h3>
+								<a href={item.href}>{item.title}</a>
+							</h3>
+							<p>{item.text}</p>
+							<span class="more">{item.more}</span>
+						</article>
+					))
+				}
+				{
+					posts.map((post) => (
+						<article class="work-card" data-kind="articles">
+							<p class="kicker">Blog · {post.data.category}</p>
+							<h3>
+								<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+							</h3>
+							<p>{post.data.description}</p>
+							<p class="meta">
+								<FormattedDate date={post.data.pubDate} />
+							</p>
+							<span class="more">Read the article</span>
+						</article>
+					))
+				}
+				{
+					presentations.map((item) => (
+						<article class="work-card" data-kind="presentations">
+							<p class="kicker">Presentations</p>
+							<h3>
+								<a href={item.href}>{item.title}</a>
+							</h3>
+							<p>{item.text}</p>
+							<span class="more">{item.more}</span>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<Invite
+		title="If this is the kind of classroom you want more of"
+		text="Write about a visit, a family question, a shared protocol, or a workshop for your faculty or conference."
+	/>
+</BaseLayout>
+
+<script>
+	const buttons = document.querySelectorAll<HTMLButtonElement>("[data-filter]");
+	const cards = document.querySelectorAll<HTMLElement>("[data-kind]");
+	const status = document.getElementById("filter-status");
+
+	const labels: Record<string, string> = {
+		all: "all recent work",
+		curriculum: "AP Seminar curriculum",
+		classroom: "classroom resources",
+		articles: "blog articles",
+		presentations: "presentations",
+	};
+
+	function apply(kind: string) {
+		let visible = 0;
+		cards.forEach((card) => {
+			const show = kind === "all" || card.dataset.kind === kind;
+			card.hidden = !show;
+			if (show) visible += 1;
+		});
+		buttons.forEach((button) => {
+			button.setAttribute("aria-pressed", String(button.dataset.filter === kind));
+		});
+		if (status) {
+			const label = labels[kind] ?? "recent work";
+			const noun = visible === 1 ? "item" : "items";
+			status.textContent = `Showing ${label}, ${visible} ${noun}.`;
+		}
+	}
+
+	buttons.forEach((button) => {
+		button.addEventListener("click", () => apply(button.dataset.filter ?? "all"));
+	});
+</script>

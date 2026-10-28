@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { EMAIL, LINKEDIN_URL, pageTitle } from "../consts";
+
+const description =
+	"Contact Akai Milson, 11th Grade English and AP Seminar teacher at Olympia High School, about classroom visits, family questions, collaborations, and workshops.";
+---
+
+<BaseLayout title={pageTitle("Contact")} description={description}>
+	<PageHero
+		eyebrow="Contact"
+		title="Write with the work in mind"
+		lede="Administrators, parents, fellow educators, and conference organizers are all welcome. Tell me who you are and what you hope the conversation will do."
+	/>
+
+	<section class="section">
+		<div class="wrap">
+			<div class="audience-grid" style="margin-bottom:2rem">
+				<article class="audience-card">
+					<h3>Administrators</h3>
+					<p>Curriculum alignment, classroom visits, instructional coaching, and faculty learning on inquiry, writing, or academic integrity.</p>
+				</article>
+				<article class="audience-card">
+					<h3>Parents and guardians</h3>
+					<p>Questions about 11th Grade English, AP Seminar tasks, how feedback works, and how to support research at home.</p>
+				</article>
+				<article class="audience-card">
+					<h3>Fellow educators</h3>
+					<p>Resource sharing, a protocol you want to adapt, or a visit to think through a unit together.</p>
+				</article>
+				<article class="audience-card">
+					<h3>Conference organizers</h3>
+					<p>Workshops on fact-checking, AI-assisted research, and scaffolding academic writing. Sessions are hands-on.</p>
+				</article>
+			</div>
+
+			<div class="contact-layout">
+				<div class="stack">
+					<h2>Direct notes</h2>
+					<p class="lede" style="margin-top:0.4rem">
+						Email is the most reliable way to reach me. The form opens a message in your own email
+						app so nothing is stored on this site.
+					</p>
+					<div class="direct-links">
+						<a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+						<a href={LINKEDIN_URL} rel="noopener noreferrer" target="_blank">
+							Connect on LinkedIn <span class="sr-only">(opens in a new tab)</span>
+						</a>
+						<a href="/resources">Browse classroom resources</a>
+					</div>
+				</div>
+
+				<form class="form" id="contact-form">
+					<div class="form-row">
+						<label class="field">
+							<span>Name</span>
+							<input name="name" type="text" autocomplete="name" required />
+						</label>
+						<label class="field">
+							<span>Email</span>
+							<input name="email" type="email" autocomplete="email" required />
+						</label>
+					</div>
+					<div class="form-row">
+						<label class="field">
+							<span>I am a</span>
+							<select name="role" required>
+								<option value="">Choose one</option>
+								<option>School administrator</option>
+								<option>Parent or guardian</option>
+								<option>Fellow educator</option>
+								<option>Conference organizer</option>
+								<option>Student</option>
+								<option>Someone else</option>
+							</select>
+						</label>
+						<label class="field">
+							<span>Topic</span>
+							<select name="topic" id="topic" required>
+								<option value="">Choose one</option>
+								<option value="Classroom visit or curriculum conversation">Classroom visit or curriculum conversation</option>
+								<option value="A family question about English or AP Seminar">A family question about English or AP Seminar</option>
+								<option value="Collaboration with another educator">Collaboration with another educator</option>
+								<option value="Workshop: Students as Fact-Checkers">Workshop: Students as Fact-Checkers</option>
+								<option value="Workshop: AI-assisted research">Workshop: AI-assisted research</option>
+								<option value="Workshop: Scaffolding academic writing">Workshop: Scaffolding academic writing</option>
+								<option value="Something else">Something else</option>
+							</select>
+						</label>
+					</div>
+					<label class="field">
+						<span>Message</span>
+						<textarea name="message" required placeholder="What would you like to talk through?"></textarea>
+					</label>
+					<button class="btn btn-primary" type="submit">Send message</button>
+					<p class="form-note">
+						Sending opens an email to {EMAIL}. If your mail app does not open, copy your message and
+						send it to that address directly.
+					</p>
+					<p id="form-status" role="status"></p>
+				</form>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<script>
+	const interestTopics: Record<string, string> = {
+		"fact-checking": "Workshop: Students as Fact-Checkers",
+		"ai-research": "Workshop: AI-assisted research",
+		"academic-writing": "Workshop: Scaffolding academic writing",
+	};
+
+	const topic = document.querySelector<HTMLSelectElement>("#topic");
+	const interest = new URLSearchParams(window.location.search).get("interest");
+	if (topic && interest && interestTopics[interest]) {
+		topic.value = interestTopics[interest];
+	}
+
+	const form = document.querySelector<HTMLFormElement>("#contact-form");
+	const status = document.querySelector("#form-status");
+
+	form?.addEventListener("submit", (event) => {
+		event.preventDefault();
+		if (!form.reportValidity()) return;
+
+		const data = new FormData(form);
+		const name = String(data.get("name") ?? "").trim();
+		const email = String(data.get("email") ?? "").trim();
+		const role = String(data.get("role") ?? "").trim();
+		const selectedTopic = String(data.get("topic") ?? "").trim();
+		const message = String(data.get("message") ?? "").trim();
+		const subject = encodeURIComponent(`${selectedTopic} — ${name}`);
+		const body = encodeURIComponent(
+			`Name: ${name}\nEmail: ${email}\nI am a: ${role}\nTopic: ${selectedTopic}\n\n${message}\n`,
+		);
+
+		if (status) {
+			status.textContent =
+				"Opening your email app addressed to info@akaimilson.com. If nothing opens, send the message directly to that address.";
+		}
+
+		window.location.href = `mailto:info@akaimilson.com?subject=${subject}&body=${body}`;
+	});
+</script>
