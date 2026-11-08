@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
-import { EMAIL, LINKEDIN_URL, pageTitle } from "../consts";
+import { EMAIL, SOCIAL_LINKS, pageTitle } from "../consts";
 
 const description =
 	"Write Akai Milson about a classroom visit, a family question, a collaboration, or a workshop.";
@@ -43,9 +43,14 @@ const description =
 					</p>
 					<div class="direct-links">
 						<a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-						<a href={LINKEDIN_URL} rel="noopener noreferrer" target="_blank">
-							Connect on LinkedIn <span class="sr-only">(opens in a new tab)</span>
-						</a>
+						{
+							SOCIAL_LINKS.map((link) => (
+								<a href={link.href} rel="noopener noreferrer" target="_blank">
+									{"contactLabel" in link ? link.contactLabel : link.label}
+									<span class="sr-only">(opens in a new tab)</span>
+								</a>
+							))
+						}
 						<a href="/resources">Browse classroom resources</a>
 					</div>
 				</div>

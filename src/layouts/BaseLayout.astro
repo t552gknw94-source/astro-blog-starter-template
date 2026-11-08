@@ -2,7 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_DESCRIPTION } from "../consts";
+import { SITE_DESCRIPTION, SOCIAL_LINKS } from "../consts";
 
 interface Props {
 	title: string;
@@ -23,7 +23,7 @@ const jsonLd = {
 	},
 	url: "https://www.akaimilson.com",
 	email: "info@akaimilson.com",
-	sameAs: ["https://www.linkedin.com/in/akaimilson"],
+	sameAs: SOCIAL_LINKS.map((link) => link.href),
 	description: SITE_DESCRIPTION,
 };
 ---
