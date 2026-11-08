@@ -1,6 +1,6 @@
 ---
 title: "Academic Paragraph Builder"
-description: "A claim, evidence, and commentary frame for 11th Grade English and AP Seminar, with a short worked example students can imitate and then leave behind."
+description: "Claim, evidence, and commentary, with a short example to leave behind."
 category: "11th Grade English & Writing"
 categoryId: "english"
 order: 1

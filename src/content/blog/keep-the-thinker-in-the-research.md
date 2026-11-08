@@ -1,6 +1,6 @@
 ---
 title: "Keep the Thinker in the Research"
-description: "A classroom protocol for AI-assisted research: students write the question, the needed evidence, and the doubts before a tool is opened, and they verify whatever comes back."
+description: "Write the question and the doubts before a tool is opened. Then verify."
 pubDate: 2026-09-08
 category: "AI & Technology"
 ---

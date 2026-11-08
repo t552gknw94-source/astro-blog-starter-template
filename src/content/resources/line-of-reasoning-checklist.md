@@ -1,6 +1,6 @@
 ---
 title: "Line of Reasoning Checklist"
-description: "A revision checklist for the Individual Research Report and Individual Written Argument, written beside the official criteria."
+description: "A revision pass for the IRR and IWA, beside the official criteria."
 category: "AP Seminar Research & Argumentation"
 categoryId: "ap-seminar"
 order: 3

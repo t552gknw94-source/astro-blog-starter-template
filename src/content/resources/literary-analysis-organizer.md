@@ -1,6 +1,6 @@
 ---
 title: "Literary Analysis Organizer"
-description: "A passage organizer that asks what a text is doing, which technique carries the work, and why that matters to the student’s argument."
+description: "What a passage does, which technique carries it, and why it matters."
 category: "11th Grade English & Writing"
 categoryId: "english"
 order: 2

@@ -1,6 +1,6 @@
 ---
 title: "Generative AI Classroom Norms"
-description: "A one-page agreement for students, families, and teachers: disclosure, authorship, privacy, and when a tool helps or flattens the work."
+description: "Disclosure, authorship, and privacy for generative AI."
 category: "AI & Technology in the Classroom"
 categoryId: "ai-tech"
 order: 2

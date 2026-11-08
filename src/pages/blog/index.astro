@@ -13,14 +13,14 @@ const posts = (await getCollection("blog")).sort(
 const [feature, ...rest] = posts;
 
 const description =
-	"Essays by Akai Milson on inquiry, source evaluation, AP Seminar, curiosity in 11th Grade English, and teaching writing in an AI era.";
+	"Essays on inquiry, sources, AP Seminar, 11th grade English, and writing with AI in the room.";
 ---
 
 <BaseLayout title={pageTitle("Blog")} description={description}>
 	<PageHero
 		eyebrow="Blog"
 		title="Notes from the classroom"
-		lede="Essays on inquiry, source evaluation, academic writing, and the judgment students still have to practice when the tools get faster."
+		lede="Inquiry, sources, academic writing, and judgment when the tools get faster."
 	/>
 
 	<section class="section">
@@ -61,7 +61,7 @@ const description =
 		</div>
 	</section>
 	<Invite
-		title="Use an idea from one of these essays"
-		text="The resource library holds the classroom versions: organizers, protocols, and norms you can hand to students."
+		title="Take an idea into the classroom"
+		text="The resource library holds the organizers, protocols, and norms."
 	/>
 </BaseLayout>

@@ -4,14 +4,14 @@ import PageHero from "../components/PageHero.astro";
 import { EMAIL, LINKEDIN_URL, pageTitle } from "../consts";
 
 const description =
-	"Contact Akai Milson, 11th Grade English and AP Seminar teacher at Olympia High School, about classroom visits, family questions, collaborations, and workshops.";
+	"Write Akai Milson about a classroom visit, a family question, a collaboration, or a workshop.";
 ---
 
 <BaseLayout title={pageTitle("Contact")} description={description}>
 	<PageHero
 		eyebrow="Contact"
 		title="Write with the work in mind"
-		lede="Administrators, parents, fellow educators, and conference organizers are all welcome. Tell me who you are and what you hope the conversation will do."
+		lede="Administrators, families, educators, and conference organizers. Say who you are and what you need."
 	/>
 
 	<section class="section">
@@ -19,19 +19,19 @@ const description =
 			<div class="audience-grid" style="margin-bottom:2rem">
 				<article class="audience-card">
 					<h3>Administrators</h3>
-					<p>Curriculum alignment, classroom visits, instructional coaching, and faculty learning on inquiry, writing, or academic integrity.</p>
+					<p>Curriculum, visits, and faculty learning on inquiry, writing, or academic integrity.</p>
 				</article>
 				<article class="audience-card">
 					<h3>Parents and guardians</h3>
-					<p>Questions about 11th Grade English, AP Seminar tasks, how feedback works, and how to support research at home.</p>
+					<p>English, AP Seminar, feedback, and how to support research at home.</p>
 				</article>
 				<article class="audience-card">
 					<h3>Fellow educators</h3>
-					<p>Resource sharing, a protocol you want to adapt, or a visit to think through a unit together.</p>
+					<p>A protocol to adapt, or a visit to plan a unit.</p>
 				</article>
 				<article class="audience-card">
 					<h3>Conference organizers</h3>
-					<p>Workshops on fact-checking, AI-assisted research, and scaffolding academic writing. Sessions are hands-on.</p>
+					<p>Hands-on workshops on fact-checking, AI research, and academic writing.</p>
 				</article>
 			</div>
 
@@ -39,8 +39,7 @@ const description =
 				<div class="stack">
 					<h2>Direct notes</h2>
 					<p class="lede" style="margin-top:0.4rem">
-						Email is the most reliable way to reach me. The form opens a message in your own email
-						app so nothing is stored on this site.
+						The form opens your email app. Nothing is stored on this site.
 					</p>
 					<div class="direct-links">
 						<a href={`mailto:${EMAIL}`}>{EMAIL}</a>
@@ -95,8 +94,7 @@ const description =
 					</label>
 					<button class="btn btn-primary" type="submit">Send message</button>
 					<p class="form-note">
-						Sending opens an email to {EMAIL}. If your mail app does not open, copy your message and
-						send it to that address directly.
+						This opens an email to {EMAIL}. If nothing opens, send the note there directly.
 					</p>
 					<p id="form-status" role="status"></p>
 				</form>
@@ -138,7 +136,7 @@ const description =
 
 		if (status) {
 			status.textContent =
-				"Opening your email app addressed to info@akaimilson.com. If nothing opens, send the message directly to that address.";
+				"Opening an email to info@akaimilson.com. If nothing opens, send the note there directly.";
 		}
 
 		window.location.href = `mailto:info@akaimilson.com?subject=${subject}&body=${body}`;

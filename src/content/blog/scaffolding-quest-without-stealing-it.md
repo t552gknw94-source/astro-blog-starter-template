@@ -1,6 +1,6 @@
 ---
 title: "Scaffolding QUEST Without Stealing the Inquiry"
-description: "How to use the AP Seminar QUEST cycle as a method students can walk, then take the organizers away before the individual argument."
+description: "Walk the QUEST cycle, then take the organizers away."
 pubDate: 2026-08-12
 category: "AP Seminar"
 ---
