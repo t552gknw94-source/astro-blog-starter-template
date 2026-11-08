@@ -1,8 +1,7 @@
 ---
 /**
- * Framed portrait.
- * Drop a photograph at public/akai-portrait.jpg and rebuild.
- * Until that file exists, an editorial monogram illustration fills the frame.
+ * Square editorial portrait.
+ * Add public/akai-portrait.jpg and rebuild to replace the monogram plate.
  */
 interface Props {
 	size?: "hero" | "aside";
@@ -31,90 +30,59 @@ const hasPortrait = __HAS_PORTRAIT__;
 					<svg viewBox="0 0 640 800" role="img" aria-labelledby="portrait-title portrait-desc">
 						<title id="portrait-title">Akai Milson</title>
 						<desc id="portrait-desc">
-							Editorial monogram illustration used until a photograph is added at public/akai-portrait.jpg.
+							Editorial monogram used until a photograph is added at public/akai-portrait.jpg.
 						</desc>
 						<defs>
-							<linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
-								<stop offset="0%" stop-color="#F7F3EC" />
-								<stop offset="48%" stop-color="#E7F2F0" />
-								<stop offset="100%" stop-color="#E4EAF2" />
+							<linearGradient id="plate" x1="0" y1="0" x2="0" y2="1">
+								<stop offset="0%" stop-color="#1a2740" />
+								<stop offset="100%" stop-color="#0c121c" />
 							</linearGradient>
-							<filter id="grain" x="0" y="0" width="100%" height="100%">
-								<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" result="noise" />
-								<feColorMatrix type="saturate" values="0" />
-								<feComponentTransfer>
-									<feFuncA type="linear" slope="0.045" />
-								</feComponentTransfer>
-							</filter>
 						</defs>
-						<rect width="640" height="800" fill="url(#paper)" />
-						<rect width="640" height="800" filter="url(#grain)" />
-						<ellipse cx="330" cy="300" rx="210" ry="150" fill="#F4E7D4" opacity="0.85" />
-						<ellipse cx="250" cy="250" rx="90" ry="70" fill="#D7EBE7" opacity="0.9" />
-						<g fill="none" stroke="#1E3A5F" stroke-width="3">
-							<rect x="78" y="64" width="150" height="108" />
-							<line x1="153" y1="64" x2="153" y2="172" />
-							<line x1="78" y1="118" x2="228" y2="118" />
-						</g>
-						<rect x="92" y="78" width="48" height="28" fill="#F6E2C4" />
+						<rect width="640" height="800" fill="url(#plate)" />
+						<rect x="28" y="28" width="584" height="744" fill="none" stroke="#C9A55C" stroke-width="1" />
 						<text
 							x="320"
-							y="168"
+							y="150"
 							text-anchor="middle"
-							fill="#0F766E"
+							fill="#C9A55C"
 							font-family="Inter, sans-serif"
-							font-size="15"
+							font-size="13"
 							font-weight="600"
-							letter-spacing="4.5">OLYMPIA HIGH SCHOOL</text
+							letter-spacing="5">OLYMPIA HIGH SCHOOL</text
 						>
 						<text
 							x="320"
-							y="292"
+							y="340"
 							text-anchor="middle"
-							fill="#1E3A5F"
-							font-family="Playfair Display, Georgia, serif"
+							fill="#F5F1E8"
+							font-family="Cormorant Garamond, Georgia, serif"
+							font-size="108"
+							font-weight="500">Akai</text
+						>
+						<text
+							x="320"
+							y="440"
+							text-anchor="middle"
+							fill="#F5F1E8"
+							font-family="Cormorant Garamond, Georgia, serif"
 							font-size="92"
-							font-weight="600">Akai</text
-						>
-						<text
-							x="320"
-							y="386"
-							text-anchor="middle"
-							fill="#1E3A5F"
-							font-family="Playfair Display, Georgia, serif"
-							font-size="84"
 							font-style="italic"
 							font-weight="500">Milson</text
 						>
-						<line x1="230" y1="424" x2="410" y2="424" stroke="#0F766E" stroke-width="2" />
+						<line x1="230" y1="480" x2="410" y2="480" stroke="#C9A55C" stroke-width="1" />
 						<text
 							x="320"
-							y="462"
+							y="522"
 							text-anchor="middle"
-							fill="#3E4A57"
+							fill="#C9C2B4"
 							font-family="Inter, sans-serif"
-							font-size="13"
+							font-size="12"
 							font-weight="600"
-							letter-spacing="2.8">HELPING STUDENTS BECOME</text
+							letter-spacing="3.2">ENGLISH · AP SEMINAR</text
 						>
-						<text
-							x="320"
-							y="486"
-							text-anchor="middle"
-							fill="#3E4A57"
-							font-family="Inter, sans-serif"
-							font-size="13"
-							font-weight="600"
-							letter-spacing="3.4">BETTER THINKERS</text
-						>
-						<g>
-							<rect x="148" y="560" width="58" height="168" rx="3" fill="#1E3A5F" transform="rotate(-8 177 644)" />
-							<rect x="214" y="536" width="70" height="196" rx="3" fill="#0F766E" />
-							<rect x="296" y="572" width="54" height="156" rx="3" fill="#C4D5E4" />
-							<rect x="360" y="548" width="66" height="184" rx="3" fill="#1E3A5F" transform="rotate(6 393 640)" />
-							<path d="M250 690h150l-12 62H262z" fill="#F7F3EC" stroke="#1E3A5F" stroke-width="3" />
-							<path d="M325 690v62" stroke="#1E3A5F" stroke-width="2" />
-							<path d="M278 712h36M278 728h30M340 712h36M340 728h28" stroke="#0F766E" stroke-width="2" />
+						<g fill="none" stroke="#C9A55C" stroke-width="1.25">
+							<path d="M230 600c36 16 62 16 90 0v86c-28 16-54 16-90 0z" />
+							<path d="M410 600c-36 16-62 16-90 0v86c28 16 54 16 90 0z" />
 						</g>
 					</svg>
 				</div>
