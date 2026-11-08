@@ -644,6 +644,7 @@ a:hover {
 	height: 100%;
 	display: block;
 	object-fit: cover;
+	object-position: center 42%;
 }
 
 .portrait-inner.has-photo .portrait-fallback {
