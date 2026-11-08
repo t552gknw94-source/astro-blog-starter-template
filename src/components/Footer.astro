@@ -1,5 +1,5 @@
 ---
-import { EMAIL, LINKEDIN_URL, MAXPREPS_URL, NAV_LINKS } from "../consts";
+import { EMAIL, MAXPREPS_URL, NAV_LINKS, SOCIAL_LINKS } from "../consts";
 ---
 
 <footer class="site-footer">
@@ -26,11 +26,15 @@ import { EMAIL, LINKEDIN_URL, MAXPREPS_URL, NAV_LINKS } from "../consts";
 		<div>
 			<p class="footer-heading">Connect</p>
 			<ul class="footer-links">
-				<li>
-					<a href={LINKEDIN_URL} rel="noopener noreferrer" target="_blank">
-						LinkedIn <span class="sr-only">(opens in a new tab)</span>
-					</a>
-				</li>
+				{
+					SOCIAL_LINKS.map((link) => (
+						<li>
+							<a href={link.href} rel="noopener noreferrer" target="_blank">
+								{link.label} <span class="sr-only">(opens in a new tab)</span>
+							</a>
+						</li>
+					))
+				}
 				<li><a href="/contact">Contact</a></li>
 				<li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
 				<li>
