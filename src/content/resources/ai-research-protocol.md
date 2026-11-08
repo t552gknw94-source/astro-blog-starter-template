@@ -1,6 +1,6 @@
 ---
 title: "AI Research Protocol"
-description: "A phased protocol for research writing: think first, use a tool for a named job, verify against sources, and keep the line of reasoning."
+description: "Think first. Use a tool for one job. Verify. Keep the reasoning."
 category: "AI & Technology in the Classroom"
 categoryId: "ai-tech"
 order: 1

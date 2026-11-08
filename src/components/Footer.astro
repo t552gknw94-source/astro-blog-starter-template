@@ -1,5 +1,5 @@
 ---
-import { EMAIL, LINKEDIN_URL, NAV_LINKS } from "../consts";
+import { EMAIL, LINKEDIN_URL, MAXPREPS_URL, NAV_LINKS } from "../consts";
 ---
 
 <footer class="site-footer">
@@ -8,8 +8,7 @@ import { EMAIL, LINKEDIN_URL, NAV_LINKS } from "../consts";
 			<p class="footer-mark" aria-hidden="true">AM</p>
 			<p class="footer-summary">Akai Milson — Helping Students Become Better Thinkers</p>
 			<p class="footer-note">
-				11th Grade English and AP Seminar at Olympia High School. Curriculum design, inquiry, and
-				technology used in the service of student thinking.
+				11th Grade English, AP Seminar, and varsity girls basketball at Olympia High School.
 			</p>
 		</div>
 		<nav aria-label="Footer">
@@ -34,6 +33,12 @@ import { EMAIL, LINKEDIN_URL, NAV_LINKS } from "../consts";
 				</li>
 				<li><a href="/contact">Contact</a></li>
 				<li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+				<li>
+					<a href={MAXPREPS_URL} rel="noopener noreferrer" target="_blank">
+						Olympia Girls Basketball on MaxPreps
+						<span class="sr-only">(opens in a new tab)</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>

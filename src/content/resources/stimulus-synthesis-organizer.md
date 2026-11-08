@@ -1,6 +1,6 @@
 ---
 title: "Stimulus Packet Synthesis Organizer"
-description: "A table and a set of sentence stems for reading a stimulus packet as a conversation among perspectives."
+description: "A table for reading a packet as a conversation."
 category: "AP Seminar Research & Argumentation"
 categoryId: "ap-seminar"
 order: 2

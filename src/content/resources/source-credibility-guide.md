@@ -1,6 +1,6 @@
 ---
 title: "CLEAR Source Guide"
-description: "A five-move guide for deciding whether a source is credible for a particular question, including a lateral read."
+description: "Five moves for judging a source, including a lateral read."
 category: "Web Literacy & Fact-Checking"
 categoryId: "web-literacy"
 order: 1

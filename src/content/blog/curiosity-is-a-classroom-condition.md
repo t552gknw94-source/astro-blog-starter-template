@@ -1,6 +1,6 @@
 ---
 title: "Curiosity Is a Classroom Condition"
-description: "In 11th Grade English, curiosity is designed: questions before theses, discussion that produces a draft, and assessments that reward a change of mind."
+description: "Questions before theses, talk that changes the draft, and credit for a changed mind."
 pubDate: 2026-06-18
 category: "11th Grade English"
 ---

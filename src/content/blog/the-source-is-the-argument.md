@@ -1,6 +1,6 @@
 ---
 title: "The Source Is the Argument"
-description: "Fluent prose is cheap now. Source evaluation has to be taught as reasoning: who made this, what it can prove, and what a second source does to a student’s confidence."
+description: "Fluency is cheap. Teach what a source is allowed to prove."
 pubDate: 2026-10-06
 updatedDate: 2026-10-20
 category: "Web Literacy"

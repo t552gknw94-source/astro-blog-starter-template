@@ -1,6 +1,6 @@
 ---
 title: "Team Presentation Planner"
-description: "A planning guide for the Team Multimedia Presentation so a group builds one argument instead of a sequence of unrelated reports."
+description: "One team argument, not a row of separate reports."
 category: "AP Seminar Research & Argumentation"
 categoryId: "ap-seminar"
 order: 4

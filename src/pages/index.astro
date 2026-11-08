@@ -13,25 +13,25 @@ const posts = (await getCollection("blog")).sort(
 const curriculum = [
 	{
 		title: "Inquiry Frameworks",
-		text: "Question design, lens selection, and a QUEST cycle students can actually walk, from the first curiosity to a claim they can defend.",
+		text: "Question design, lenses, and a QUEST cycle students can walk.",
 		href: "/ap-seminar#quest",
 		more: "See the QUEST cycle",
 	},
 	{
 		title: "Stimulus Packet Synthesis",
-		text: "A routine for reading a packet as a conversation: what each source claims, where the perspectives clash, and what the tension makes possible.",
+		text: "Read a packet as a conversation: claims, clashes, and the tension.",
 		href: "/resources/stimulus-synthesis-organizer/",
 		more: "Open the organizer",
 	},
 	{
 		title: "QUEST Model Scaffolding",
-		text: "Planning maps that make each move visible early in the year, then fade once students can carry the thinking without the boxes.",
+		text: "Planning maps that fade once students can carry the thinking.",
 		href: "/resources/quest-planning-map/",
 		more: "Open the planning map",
 	},
 	{
 		title: "Performance Task Rubrics",
-		text: "Companion checklists for the IRR, TMP, IWA, and IMP. They sit beside College Board’s official criteria and translate them into revision moves.",
+		text: "Checklists for the IRR, TMP, IWA, and IMP, beside College Board’s criteria.",
 		href: "/ap-seminar#performance-tasks",
 		more: "Review the tasks",
 	},
@@ -40,19 +40,19 @@ const curriculum = [
 const classroom = [
 	{
 		title: "Graphic Organizers",
-		text: "Paragraph builders and literary analysis frames for 11th Grade English and AP Seminar, designed to teach the move and then get out of the way.",
+		text: "Paragraph builders and literary frames for English and AP Seminar.",
 		href: "/resources#english",
 		more: "Browse writing tools",
 	},
 	{
 		title: "Source Credibility & Web Literacy",
-		text: "Guides for naming a creator, reading laterally, and deciding what a source is allowed to prove in an argument.",
+		text: "Name the creator, read laterally, and decide what a source can prove.",
 		href: "/resources#web-literacy",
 		more: "Open the guides",
 	},
 	{
 		title: "Peer Review Protocols",
-		text: "A timed, specific protocol so feedback names the line of reasoning, the evidence, and one revision the writer can make today.",
+		text: "A timed protocol for the line of reasoning, the evidence, and one revision.",
 		href: "/resources/peer-review-protocol/",
 		more: "Open the protocol",
 	},
@@ -61,19 +61,19 @@ const classroom = [
 const presentations = [
 	{
 		title: "Students as Fact-Checkers",
-		text: "A workshop on making lateral reading and source evaluation a classroom habit, including live claims students are already seeing.",
+		text: "Lateral reading and source evaluation as a classroom habit.",
 		href: "/contact?interest=fact-checking",
 		more: "Request this workshop",
 	},
 	{
 		title: "AI-Assisted Research Without Losing the Thinker",
-		text: "Protocols that let students use emerging tools for search and feedback while the question, the judgment, and the line of reasoning stay theirs.",
+		text: "Search and feedback tools. The question and the judgment stay with the student.",
 		href: "/contact?interest=ai-research",
 		more: "Request this workshop",
 	},
 	{
 		title: "Scaffolding Academic Writing",
-		text: "A session on organizers, models, and peer review that build academic writing without sanding off a student’s voice.",
+		text: "Organizers and peer review that build academic writing and keep the student’s voice.",
 		href: "/contact?interest=academic-writing",
 		more: "Request this workshop",
 	},
@@ -115,7 +115,7 @@ const presentations = [
 		<div class="wrap">
 			<div class="section-head">
 				<p class="eyebrow">Four pillars</p>
-				<h2 id="pillars-heading">The work, in four directions</h2>
+				<h2 id="pillars-heading">Four directions</h2>
 			</div>
 			<div class="pillar-grid">
 				<a class="pillar" href="/ap-seminar">
@@ -153,7 +153,7 @@ const presentations = [
 					</span>
 					<h3>AI &amp; Technology</h3>
 					<p>Using emerging technology to enhance—not replace—learning.</p>
-					<span class="more">See classroom technology tools</span>
+					<span class="more">Open the tools</span>
 				</a>
 				<a class="pillar" href="/teaching#research-writing">
 					<span class="pillar-index">04</span>
@@ -171,14 +171,23 @@ const presentations = [
 		</div>
 	</section>
 
+	<section class="section" aria-labelledby="court-heading">
+		<div class="wrap teaser">
+			<div>
+				<p class="eyebrow">Basketball</p>
+				<h2 id="court-heading">Varsity girls basketball</h2>
+				<p class="lede">Head coach at Olympia High School in Orlando. Second season.</p>
+			</div>
+			<a class="btn btn-secondary" href="/basketball">Coaching resume</a>
+		</div>
+	</section>
+
 	<section class="section" id="recent-work" aria-labelledby="recent-heading">
 		<div class="wrap">
 			<div class="section-head">
 				<p class="eyebrow">Recent work</p>
 				<h2 id="recent-heading">Curriculum, tools, writing, and workshops</h2>
-				<p class="lede">
-					Four strands of the same practice. Filter the list, or read straight through.
-				</p>
+				<p class="lede">Filter the list, or read through.</p>
 			</div>
 			<div class="filters" role="toolbar" aria-label="Filter recent work">
 				<button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
@@ -245,8 +254,8 @@ const presentations = [
 	</section>
 
 	<Invite
-		title="If this is the kind of classroom you want more of"
-		text="Write about a visit, a family question, a shared protocol, or a workshop for your faculty or conference."
+		title="Bring this work to your school"
+		text="A visit, a family question, or a workshop."
 	/>
 </BaseLayout>
 

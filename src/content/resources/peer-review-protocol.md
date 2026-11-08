@@ -1,6 +1,6 @@
 ---
 title: "Peer Review Protocol"
-description: "A timed protocol for writing workshop: restate the line of reasoning, mark the evidence, and leave the writer with one revision they can do today."
+description: "Restate the reasoning, mark the evidence, and name one revision."
 category: "11th Grade English & Writing"
 categoryId: "english"
 order: 3

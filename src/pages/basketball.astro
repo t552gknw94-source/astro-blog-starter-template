@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { MAXPREPS_URL, pageTitle } from "../consts";
+
+const description =
+	"Akai Milson is head coach of varsity girls basketball at Olympia High School in Orlando, Florida. Second season, 2026–27.";
+---
+
+<BaseLayout title={pageTitle("Basketball")} description={description}>
+	<PageHero
+		eyebrow="Basketball"
+		title="Head Coach, Varsity Girls Basketball"
+		lede="Olympia High School, Orlando, Florida. Second season, 2026–27."
+	/>
+
+	<section class="section" aria-labelledby="experience-heading">
+		<div class="wrap">
+			<div class="section-head">
+				<h2 id="experience-heading">Coaching Experience</h2>
+			</div>
+			<dl class="resume">
+				<div class="resume-row">
+					<dt>Role</dt>
+					<dd>Head Coach, Varsity Girls Basketball</dd>
+				</div>
+				<div class="resume-row">
+					<dt>School</dt>
+					<dd>Olympia High School, Orlando, FL</dd>
+				</div>
+				<div class="resume-row">
+					<dt>Tenure</dt>
+					<dd>2025–26 season to present. Second season, 2026–27.</dd>
+				</div>
+				<div class="resume-row">
+					<dt>Program</dt>
+					<dd>Varsity and JV</dd>
+				</div>
+				<div class="resume-row">
+					<dt>Assistant coach</dt>
+					<dd>C. Andrews</dd>
+				</div>
+			</dl>
+		</div>
+	</section>
+
+	<section class="section band-warm" aria-labelledby="highlights-heading">
+		<div class="wrap">
+			<div class="section-head">
+				<h2 id="highlights-heading">Season Highlights</h2>
+			</div>
+			<div class="split-even">
+				<article class="panel">
+					<p class="kicker">2025–26</p>
+					<h3>Record</h3>
+					<ul class="score-list">
+						<li>10–11 overall</li>
+						<li>2–1 in district</li>
+						<li>2nd in FHSAA 7A District 5</li>
+					</ul>
+				</article>
+				<article class="panel">
+					<p class="kicker">2026 district tournament</p>
+					<h3>Results</h3>
+					<ul class="score-list">
+						<li>Win over Freedom, 53–8</li>
+						<li>Loss to Dr. Phillips, 52–55</li>
+					</ul>
+				</article>
+			</div>
+			<p class="lede" style="margin-top:1.5rem">2026–27 season underway.</p>
+			<div class="cta-row">
+				<a class="btn btn-secondary" href={MAXPREPS_URL} rel="noopener noreferrer" target="_blank">
+					Olympia Girls Basketball on MaxPreps
+					<span class="sr-only">(opens in a new tab)</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" aria-labelledby="philosophy-heading">
+		<div class="wrap measure prose">
+			<h2 id="philosophy-heading">Coaching Philosophy</h2>
+			<p>
+				The same standard as the classroom: develop thinkers. Discipline and clear communication
+				are how a team learns to decide, adjust, and speak for the work.
+			</p>
+		</div>
+	</section>
+
+	<!--
+		Playing Experience
+		Reserved for later. Leave this block commented out. Do not publish playing history until it is verified.
+		Suggested structure when ready:
+		<section>
+			<h2>Playing Experience</h2>
+			<dl>
+				<div>School or team</div>
+				<div>Years</div>
+				<div>Role</div>
+			</dl>
+		</section>
+	-->
+</BaseLayout>

@@ -1,6 +1,6 @@
 ---
 title: "QUEST Planning Map"
-description: "A one-page cycle students complete at the start of an inquiry, from the question through the audience they must reach."
+description: "One page from the question to the audience."
 category: "AP Seminar Research & Argumentation"
 categoryId: "ap-seminar"
 order: 1

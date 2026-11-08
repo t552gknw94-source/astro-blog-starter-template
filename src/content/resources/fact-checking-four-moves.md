@@ -1,6 +1,6 @@
 ---
 title: "Four Moves for a Live Claim"
-description: "A short classroom routine for checking a claim students actually encounter, before anyone repeats it."
+description: "A class routine for checking a live claim before anyone repeats it."
 category: "Web Literacy & Fact-Checking"
 categoryId: "web-literacy"
 order: 2
