@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import Invite from "../../components/Invite.astro";
+import { pageTitle } from "../../consts";
+import { getCollection } from "astro:content";
+
+const resources = (await getCollection("resources")).sort((a, b) => a.data.order - b.data.order);
+
+const categories = [
+	{
+		id: "ap-seminar",
+		title: "AP Seminar Research & Argumentation",
+		lede: "Frameworks for QUEST, stimulus packets, team presentations, and the line of reasoning inside the performance tasks.",
+	},
+	{
+		id: "english",
+		title: "11th Grade English & Writing",
+		lede: "Organizers and a peer review protocol for literary analysis, academic paragraphs, and drafts that still sound like the writer.",
+	},
+	{
+		id: "web-literacy",
+		title: "Web Literacy & Fact-Checking",
+		lede: "Classroom routines for deciding who is behind a source and what a second source does to a claim.",
+	},
+	{
+		id: "ai-tech",
+		title: "AI & Technology in the Classroom",
+		lede: "Norms and a research protocol for using emerging tools to enhance learning while students keep the thinking.",
+	},
+];
+
+const description =
+	"Classroom frameworks from Akai Milson: AP Seminar organizers, 11th grade writing tools, web literacy guides, and AI norms for research.";
+---
+
+<BaseLayout title={pageTitle("Resources")} description={description}>
+	<PageHero
+		eyebrow="Resources"
+		title="Frameworks students can hold"
+		lede="A library of organizers, protocols, and one-page guides from 11th Grade English and AP Seminar. Read them here, download the handout, or print the page. Use them in your classroom with attribution."
+	/>
+
+	<section class="section">
+		<div class="wrap stack" style="gap:3rem">
+			{
+				categories.map((category) => {
+					const items = resources.filter((resource) => resource.data.categoryId === category.id);
+					return (
+						<section id={category.id} aria-labelledby={`${category.id}-heading`}>
+							<div class="section-head">
+								<h2 id={`${category.id}-heading`}>{category.title}</h2>
+								<p class="lede">{category.lede}</p>
+							</div>
+							<div class="card-grid">
+								{items.map((resource) => (
+									<article class="resource-card">
+										<div class="tag-row">
+											<span class="tag">{resource.data.useLabel}</span>
+											<span class="tag">{resource.data.audience}</span>
+										</div>
+										<h3>
+											<a href={`/resources/${resource.id}/`}>{resource.data.title}</a>
+										</h3>
+										<p>{resource.data.description}</p>
+										<div class="card-actions">
+											<a href={`/resources/${resource.id}/`}>View</a>
+											<a href={`/downloads/${resource.id}.md`}>Download</a>
+										</div>
+									</article>
+								))}
+							</div>
+						</section>
+					);
+				})
+			}
+		</div>
+	</section>
+
+	<Invite
+		title="Need a version of this for your department?"
+		text="These handouts are written for students and for the teachers who coach them. Write if you want to adapt a protocol together."
+	/>
+</BaseLayout>

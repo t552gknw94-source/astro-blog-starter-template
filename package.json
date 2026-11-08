@@ -1,8 +1,8 @@
 {
-	"name": "astro-blog-starter-template",
-	"description": "Build a personal website, blog, or portfolio with Astro.",
+	"name": "akai-milson",
+	"description": "Personal site for Akai Milson, 11th Grade English and AP Seminar teacher.",
 	"cloudflare": {
-		"label": "Astro Framework Starter",
+		"label": "Akai Milson",
 		"products": [
 			"Workers"
 		],

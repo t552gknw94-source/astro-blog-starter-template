@@ -1,0 +1,59 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { pageTitle } from "../../consts";
+
+export async function getStaticPaths() {
+	const resources = await getCollection("resources");
+	return resources.map((resource) => ({
+		params: { slug: resource.id },
+		props: resource,
+	}));
+}
+
+type Props = CollectionEntry<"resources">;
+
+const resource = Astro.props;
+const { Content } = await render(resource);
+const { title, description, category, audience, useLabel, updated } = resource.data;
+---
+
+<BaseLayout title={pageTitle(title)} description={description}>
+	<article>
+		<header class="page-hero resource-hero">
+			<div class="wrap hero-copy">
+				<p class="eyebrow">{category}</p>
+				<h1>{title}</h1>
+				<p class="lede">{description}</p>
+				<div class="tag-row" style="margin-top:1rem">
+					<span class="tag">{useLabel}</span>
+					<span class="tag">{audience}</span>
+					<span class="tag">Updated <FormattedDate date={updated} /></span>
+				</div>
+				<div class="resource-actions no-print">
+					<a class="btn btn-primary" href={`/downloads/${resource.id}.md`}>Download handout</a>
+					<button class="btn btn-secondary" type="button" id="print-handout">Print</button>
+					<a class="btn btn-secondary" href={`/resources#${resource.data.categoryId}`}>Back to library</a>
+				</div>
+			</div>
+		</header>
+		<div class="section" style="padding-top:2rem">
+			<div class="wrap">
+				<div class="handout prose measure">
+					<Content />
+					<hr />
+					<p>
+						Akai Milson · <a href="https://www.akaimilson.com">akaimilson.com</a> · Classroom use
+						welcome with attribution. This handout is a teaching tool. College Board’s current
+						course materials remain the authority on AP Seminar task requirements and scoring.
+					</p>
+				</div>
+			</div>
+		</div>
+	</article>
+</BaseLayout>
+
+<script>
+	document.getElementById("print-handout")?.addEventListener("click", () => window.print());
+</script>

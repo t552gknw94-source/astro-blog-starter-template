@@ -1,5 +1,20 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+export const SITE_TITLE = "Akai Milson";
+export const SITE_DESCRIPTION =
+	"Akai Milson teaches 11th Grade English and AP Seminar at Olympia High School, designs inquiry-driven curriculum, and helps students think and write with clarity.";
+export const EMAIL = "info@akaimilson.com";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/akaimilson";
+export const SCHOOL = "Olympia High School";
 
-export const SITE_TITLE = "Astro Blog";
-export const SITE_DESCRIPTION = "Welcome to my website!";
+export const NAV_LINKS = [
+	{ href: "/", label: "Home" },
+	{ href: "/about", label: "About" },
+	{ href: "/teaching", label: "Teaching" },
+	{ href: "/ap-seminar", label: "AP Seminar" },
+	{ href: "/resources", label: "Resources" },
+	{ href: "/blog", label: "Blog" },
+	{ href: "/contact", label: "Contact" },
+] as const;
+
+export function pageTitle(title: string) {
+	return title === SITE_TITLE ? `${SITE_TITLE} · Helping Students Become Better Thinkers` : `${title} | ${SITE_TITLE}`;
+}
